@@ -1,7 +1,9 @@
 import { ADD_TODO, TOGGLE_TODO } from '../actions/todoActions'
 
 const initialState = {
-    todos: [],
+    todos: [
+        // {text: 'Learn React', isCompleted: false}
+    ],
 }
 function todoReducer(state = initialState, action) {
     switch (action.type) {
