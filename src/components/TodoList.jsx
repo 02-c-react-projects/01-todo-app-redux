@@ -5,7 +5,7 @@ import { toggleTodo } from '../../redux/actions/todoActions'
 
 
 export default function TodoList() {
-    const todos=useSelector(state => state.todos) //recommanded
+    const todos=useSelector(state => state.todoReducer.todos) //recommanded
     // const todos=store.getState().todos;
     const dispatch = useDispatch();
 
@@ -14,7 +14,7 @@ export default function TodoList() {
         <ul>
             {
                 todos.map( (todo,index) => (
-                    <li key={todo.id}>
+                    <li key={index}>
                         <span>{todo.text}</span>&nbsp;&nbsp;
                         <span>{todo.isCompleted ? 'Completed' : 'Not Completed'}</span>
                         <button onClick={() => {dispatch(toggleTodo(index))}}>Toggle</button>

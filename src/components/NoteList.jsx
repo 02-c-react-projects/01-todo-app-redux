@@ -1,11 +1,8 @@
+import { useSelector } from "react-redux";
 
 
 function NoteList() {
-    const notes=[
-      {text:'first note',createdOn:new Date()},
-      {text:'second note',createdOn:new Date()},
-
-    ];
+    const notes=useSelector(state => state.noteReducer.notes);
   return (
     <div className="container">
     <ul>
