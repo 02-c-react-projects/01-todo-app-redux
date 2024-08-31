@@ -1,14 +1,18 @@
 
 
 function NoteList() {
-    const notes=[];
+    const notes=[
+      {text:'first note',createdOn:new Date()},
+      {text:'second note',createdOn:new Date()},
+
+    ];
   return (
     <div className="container">
     <ul>
       {notes.map((note,index) => (
         <li>
-            <p>{note.createdOn.toLocaleDateString()}</p>
-            <p>{note.text}</p>
+            <span>{note.createdOn.toLocaleDateString()}</span>&nbsp;&nbsp;
+            <span>{note.text}</span>&nbsp;&nbsp;
             <button>Delete</button>
             </li>
       ))}
