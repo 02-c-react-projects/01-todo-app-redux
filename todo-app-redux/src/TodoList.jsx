@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { store } from '../redux/store'
 
-export default function TodoList({todos, toggleTodo}) {
+
+export default function TodoList({toggleTodo}) {
+    const todos=useSelector(state => state.todos)
+    // const todos=store.getState().todos;
 
   return (
     <div>

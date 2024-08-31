@@ -2,10 +2,10 @@ import { ADD_TODO, TOGGLE_TODO } from '../actions/todoActions'
 
 const initialState = {
     todos: [
-        // {text: 'Learn React', isCompleted: false}
+        {text: 'Learn React', isCompleted: false}
     ],
 }
-function todoReducer(state = initialState, action) {
+export default function todoReducer(state = initialState, action) {
     switch (action.type) {
         
         case 'ADD_TODO':
