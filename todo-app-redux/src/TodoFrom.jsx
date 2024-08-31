@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
+import {useDispatch} from 'react-redux'
+import {addTodo} from '../redux/actions/todoActions'
 
-export default function TodoFrom({addTodo}) {
+export default function TodoFrom() {
+
     const[text, setText] = useState('')
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault()
        
-        addTodo(text)
         setText('')
+        dispatch(addTodo(text))
     }
   return (
     <div>

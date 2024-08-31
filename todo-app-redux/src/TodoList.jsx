@@ -4,7 +4,7 @@ import { store } from '../redux/store'
 
 
 export default function TodoList({toggleTodo}) {
-    const todos=useSelector(state => state.todos)
+    const todos=useSelector(state => state.todos) //recommanded
     // const todos=store.getState().todos;
 
   return (
