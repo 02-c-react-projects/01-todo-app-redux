@@ -5,28 +5,50 @@ import { Provider } from 'react-redux'
 import {store} from '../redux/store'
 import TodoFrom from './components/TodoFrom'
 import TodoList from './components/TodoList'
+import { Route, Routes } from 'react-router-dom'
+import Home from './components/Home'
+import Navbar from './components/Navbar'
+import NoteForm from './components/NoteForm'
+import NoteList from './components/NoteList'
 
 function App() {
-  const [todos, setTodos] = useState([])
+  // const [todos, setTodos] = useState([])
 
-  const addTodo = (text) => {
-    setTodos([...todos, {id: todos.length_1, text, isCompleted: false}])
-  }
+  // const addTodo = (text) => {
+  //   setTodos([...todos, {id: todos.length_1, text, isCompleted: false}])
+  // }
 
-  const toggleTodo = (id) => {
-    const list=[...todos]
-    list[id].isCompleted = !list[id].isCompleted
-    setTodos(list)
-  }
+  // const toggleTodo = (id) => {
+  //   const list=[...todos]
+  //   list[id].isCompleted = !list[id].isCompleted
+  //   setTodos(list)
+  // }
 
+  
   return (
     <>
-      <h1>Todo App</h1>
-
-      {/* only these two components can access the store */}
       <Provider store={store}>      
-          <TodoFrom addTodo={addTodo} />
-          <TodoList todos={todos} toggleTodo={toggleTodo} />
+          <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='todos' element={
+                                      <>
+                                        <Navbar/>
+                                        <TodoFrom/>
+                                        <TodoList/>
+                                      </>
+                                  } 
+              />
+                  
+              <Route path='notes' element={
+                                        <>
+                                          <Navbar/> 
+                                          <NoteForm/>
+                                          <NoteList/>
+                                        </>
+                                    } 
+              />
+
+          </Routes>
       </Provider>
 
     </>
