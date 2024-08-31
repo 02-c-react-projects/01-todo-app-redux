@@ -1,10 +1,10 @@
 
 import { useState } from 'react'
 import './App.css'
-import TodoFrom from './TodoFrom'
-import TodoList from './TodoList'
 import { Provider } from 'react-redux'
 import {store} from '../redux/store'
+import TodoFrom from './components/TodoFrom'
+import TodoList from './components/TodoList'
 
 function App() {
   const [todos, setTodos] = useState([])

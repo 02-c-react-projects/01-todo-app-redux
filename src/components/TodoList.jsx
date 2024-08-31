@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
-import { store } from '../redux/store'
-import { toggleTodo } from '../redux/actions/todoActions'
+import { store } from '../../redux/store'
+import { toggleTodo } from '../../redux/actions/todoActions'
 
 
 export default function TodoList() {

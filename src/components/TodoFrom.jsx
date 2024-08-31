@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
-import {addTodo} from '../redux/actions/todoActions'
+import {addTodo} from '../../redux/actions/todoActions'
 
 export default function TodoFrom() {
 
